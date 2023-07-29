@@ -7,8 +7,8 @@ function Main() {
     <section className="h-screen flex justify-center font-medium">
       <div className="bg-brand w-full h-28 relative"></div>
       <div className="container mx-auto absolute w-4/5 bg-white border-2 border-gray-100 p-10 rounded-3xl h-4/5">
-        <div className="box">
-          <div className="content">
+        <div>
+          <div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="text-center border-r flex flex-col items-center justify-center">
                 <i className="bg-brandGreen w-16 h-16 rounded-full text-center flex justify-center items-center mt-4">

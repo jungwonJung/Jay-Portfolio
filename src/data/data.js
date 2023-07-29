@@ -4,7 +4,7 @@ const data = [
     title: "Shoppy",
     deployUrl: "https://meek-figolla-e9ce50.netlify.app/",
     gitUrl: "https://github.com/jungwonJung/React-shoppy",
-    image: "",
+    image: "/assets/shoppy.png",
     type: ["React", "JS"],
   },
   {
@@ -12,7 +12,7 @@ const data = [
     title: "JayTube",
     deployUrl: "https://dancing-nasturtium-09b3cc.netlify.app/",
     gitUrl: "https://github.com/jungwonJung/React-JayTube",
-    image: "",
+    image: "/assets/jaytube.png",
     type: ["React", "JS"],
   },
   {
@@ -20,7 +20,7 @@ const data = [
     title: "TODO App",
     deployUrl: "https://exquisite-puffpuff-daf564.netlify.app/",
     gitUrl: "https://github.com/jungwonJung/React-Todo-App",
-    image: "",
+    image: "/assets/todo.png",
     type: ["React", "JS"],
   },
   {
@@ -28,7 +28,7 @@ const data = [
     title: "Pixyfy",
     deployUrl: "https://clever-sprite-882fc4.netlify.app/index.html",
     gitUrl: "https://github.com/jungwonJung/Pixyfy-App-Jay",
-    image: "",
+    image: "/assets/pixyfy.png",
     type: ["JS", "HTML"],
   },
   {
@@ -36,7 +36,7 @@ const data = [
     title: "Coffee Bean Shop",
     deployUrl: "https://monumental-squirrel-ac1582.netlify.app/index.html",
     gitUrl: "https://github.com/jungwonJung/Mimo-Coffee-Bean",
-    image: "",
+    image: "/assets/coffeebean.png",
     type: ["HTML"],
   },
   {
@@ -44,7 +44,7 @@ const data = [
     title: "Sweet Berry",
     deployUrl: "https://genuine-entremet-8c6bcb.netlify.app/",
     gitUrl: "https://github.com/jungwonJung/Mimo-sweet-berries-project",
-    image: "",
+    image: "/assets/sweetberry.png",
     type: ["HTML"],
   },
   {
@@ -52,7 +52,7 @@ const data = [
     title: "Space Next",
     deployUrl: "https://stupendous-mandazi-1fbde3.netlify.app/#info-container",
     gitUrl: "https://github.com/jungwonJung/Space-Next",
-    image: "",
+    image: "/assets/spacenext.png",
     type: ["JS", "HTML"],
   },
   {
@@ -60,7 +60,7 @@ const data = [
     title: "Cat-MBTI",
     deployUrl: "https://ubiquitous-gelato-53aba5.netlify.app/",
     gitUrl: "https://github.com/jungwonJung/cat-mbti",
-    image: "",
+    image: "/assets/catmbti.png",
     type: ["JS", "React"],
   },
   {

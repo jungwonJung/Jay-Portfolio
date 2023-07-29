@@ -14,7 +14,7 @@ function ProjectList() {
       </div>
       <ul className=" grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 ml-8">
         {projects.map((project) => (
-          <ProjectCard key={project.id} product={project} />
+          <ProjectCard key={project.id} project={project} />
         ))}
       </ul>
     </>
