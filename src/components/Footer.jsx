@@ -1,5 +1,5 @@
 import React from "react";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { BsGithub, BsLinkedin, BsFillFilePersonFill } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
@@ -34,6 +34,15 @@ function Footer() {
                 <AiOutlineMail className="text-white text-4xl hover:scale-125 hover:text-brandGreen " />
               </i>
             </Link>
+            <a
+              href="/assets/JungWon(Jay)'s CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i>
+                <BsFillFilePersonFill className="text-white text-4xl hover:scale-125 hover:text-brandGreen " />
+              </i>
+            </a>
           </div>
         </div>
         <div className="bg-brand w-full h-full relative z-0 mt-40 flex flex-col justify-center items-center">
