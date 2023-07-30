@@ -7,7 +7,7 @@ function Main() {
   return (
     <section className="h-screen flex justify-center font-medium">
       <div className="bg-brand w-full h-28 relative"></div>
-      <div className="container mx-auto absolute w-4/5 bg-white border-2 border-gray-100 p-10 rounded-3xl h-4/5">
+      <div className="container mx-auto absolute w-4/5 bg-white border-2 border-gray-100 p-10 rounded-3xl h-4/5 shadow-2xl">
         <div>
           <div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

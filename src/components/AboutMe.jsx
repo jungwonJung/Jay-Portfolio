@@ -2,10 +2,12 @@ import React from "react";
 
 function AboutMe() {
   const span =
-    "inline-flex items-center px-2 py-1 bg-brand text-white border border-brand rounded-full flex justify-center";
+    "inline-flex items-center px-2 py-1 bg-brand text-white border border-brand rounded-full flex justify-center shadow-xl";
+  const span__2 =
+    "inline-flex items-center px-2 py-1 bg-brandGreen text-white border border-brandGreen rounded-full flex justify-center shadow-xl";
 
   return (
-    <section className="flex flex-col justify-center items-center">
+    <section className="flex flex-col justify-center items-center ">
       <h2 className="text-5xl font-semibold">About Me</h2>
       <div className="p-6 flex justify-center items-center">
         <div className="flex flex-col justify-center items-center">
@@ -18,15 +20,15 @@ function AboutMe() {
             I've worked as a backend developer in South Korea for about one and
             a half years. Now, I am in Europe to participate in a boot camp that
             caters to Europeans, Britons, and Americans and is conducted
-            entirely in English. My goal is to become a frontend developer, and
-            I am currently putting in all my efforts and passion to achieve
-            that. I believe in the synergy between development and design, and I
-            see great potential in bringing both ends together. I am an
-            enthusiastic and adventurous developer, always ready to take on new
-            challenges.
+            entirely in English. <br /> My goal is to become a frontend
+            developer, and I am currently putting in all my efforts and passion
+            to achieve that. <br />I believe in the synergy between development
+            and design, and I see great potential in bringing both ends
+            together. I am an enthusiastic and adventurous developer, always
+            ready to take on new challenges.
           </p>
         </div>
-        <div className="flex flex-col justify-center items-start ml-10">
+        <div className="flex flex-col justify-center items-start ml-10 ">
           <section>
             <p className="font-bold text-3xl">DEVELOPMENT</p>
             <div className="grid grid-cols-3 gap-4 mt-5">
@@ -41,6 +43,16 @@ function AboutMe() {
               <span className={span}>HTML</span>
               <span className={span}>CSS</span>
               <span className={span}>Express</span>
+            </div>
+          </section>
+          <section className="mt-10">
+            <p className="font-bold text-3xl">ETC.</p>
+            <div className="grid grid-cols-3 gap-4 mt-5">
+              <span className={span__2}>Docker</span>
+              <span className={span__2}>PostMan</span>
+              <span className={span__2}>TailWind</span>
+              <span className={span__2}>ElasticSearch</span>
+              <span className={span__2}>DynamoDB</span>
             </div>
           </section>
         </div>

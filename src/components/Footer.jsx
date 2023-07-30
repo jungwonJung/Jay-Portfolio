@@ -15,8 +15,8 @@ function Footer() {
         <div className="bg-brandNavy absolute w-5/6 h-48 rounded-3xl flex justify-around items-center z-10 mb-64">
           <h1 className=" text-4xl text-white font-semibold">Contact Me</h1>
           <p className="text-white text-xl w-2/5 text-center">
-            Interested in wanna know more about me? We should schedule a time
-            for a coffee chat!
+            Interested in wanna know more about me? <br /> We should schedule a
+            time for a coffee chat!
           </p>
           <div className="flex justify-center items-center gap-8">
             <Link to="https://github.com/jungwonJung">
