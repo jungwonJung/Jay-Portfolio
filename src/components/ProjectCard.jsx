@@ -11,7 +11,7 @@ function ProjectCard({ project }) {
         src={image}
         alt={title}
       />
-      <div className="absolute inset-0 flex flex-col justify-center items-center text-white opacity-0 hover:opacity-100 transition duration-300">
+      <div className="absolute inset-0 flex flex-col justify-center items-center text-white opacity-0 hover:opacity-100 transition">
         <div className="bg-black bg-opacity-50 backdrop-blur-md p-4 rounded-md w-full h-full flex flex-col justify-center items-center">
           <h3 className="text-3xl font-semibold mb-6">{title}</h3>
           <div className="flex flex-col items-center">

@@ -9,11 +9,11 @@ const data = [
   },
   {
     id: 2,
-    title: "JayTube",
-    deployUrl: "https://dancing-nasturtium-09b3cc.netlify.app/",
-    gitUrl: "https://github.com/jungwonJung/React-JayTube",
-    image: "/assets/jaytube.png",
-    type: ["React", "JS"],
+    title: "Jay-ddit",
+    deployUrl: null,
+    gitUrl: "https://github.com/jungwonJung/React-Node-Community-app",
+    image: "/assets/jayddit.png",
+    type: ["TS", "React", "Node"],
   },
   {
     id: 3,
@@ -65,11 +65,11 @@ const data = [
   },
   {
     id: 9,
-    title: "Jay-ddit",
-    deployUrl: null,
-    gitUrl: "https://github.com/jungwonJung/React-Node-Community-app",
-    image: "",
-    type: ["TS", "React", "Node"],
+    title: "JayTube",
+    deployUrl: "https://dancing-nasturtium-09b3cc.netlify.app/",
+    gitUrl: "https://github.com/jungwonJung/React-JayTube",
+    image: "/assets/jaytube.png",
+    type: ["React", "JS"],
   },
 ];
 

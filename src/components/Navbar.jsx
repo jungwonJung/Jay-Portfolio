@@ -11,12 +11,12 @@ function Navbar() {
         <Link className="mr-6 text-lg hover:text-brand font-medium" to="/about">
           About Me
         </Link>
-        <Link
+        <a
           className="text-lg font-medium border-2 border-brand rounded-full py-2 px-5  text-brand hover:bg-brand hover:text-white"
-          to="/contact"
+          href="#bottom"
         >
           Contact
-        </Link>
+        </a>
       </nav>
     </header>
   );

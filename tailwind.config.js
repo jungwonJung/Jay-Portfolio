@@ -7,7 +7,8 @@ module.exports = {
         brand: "#6e06f2",
         brandGreen: "#5be9b9",
         brandWhite: "#ffffff",
-        barndNavy: "#141c3a",
+        brandNavy: "#141c3a",
+        brandMagenta: "#e3cffe",
       },
       backgroundImage: {
         main: `url('../public/Main.svg')`,
