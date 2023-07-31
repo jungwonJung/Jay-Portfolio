@@ -28,7 +28,7 @@ function ProjectList() {
     <section className="flex flex-col justify-center items-center -mt-20">
       <div className="flex flex-col justify-center items-center -mt-10">
         <h1 className="text-4xl mb-10 font-semibold">My Projects</h1>
-        <p className="text-md md:text-xl mb-16">
+        <p className="text-md md:text-xl mb-16 text-center">
           Here are a few past projects I've worked on.
         </p>
       </div>
