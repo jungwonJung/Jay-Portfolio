@@ -5,12 +5,12 @@ import InfoCard from "./InfoCard";
 
 function Main() {
   return (
-    <section className="h-screen flex justify-center font-medium">
+    <section className="flex justify-center font-medium pb-80">
       <div className="bg-brand w-full h-28 relative"></div>
-      <div className="container mx-auto absolute w-4/5 bg-white border-2 border-gray-100 p-10 rounded-3xl h-4/5 shadow-2xl">
-        <div>
-          <div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="container mx-auto md:w-3/5 lg:w-2/5 bg-white border-2 border-gray-100 p-10 rounded-3xl h-4/5 shadow-2xl min-w-full">
+        <div className="flex">
+          <div className="flex justify-center items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-6">
               <InfoCard
                 icon={<AiOutlineCode className="text-4xl" />}
                 title="Backend Developer"

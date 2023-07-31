@@ -7,16 +7,16 @@ function AboutMe() {
     "inline-flex items-center px-2 py-1 bg-brandGreen text-white border border-brandGreen rounded-full flex justify-center shadow-xl";
 
   return (
-    <section className="flex flex-col justify-center items-center ">
+    <section className="flex flex-col justify-center items-center p-2 md:p-6">
       <h2 className="text-5xl font-semibold">About Me</h2>
-      <div className="p-6 flex justify-center items-center">
-        <div className="flex flex-col justify-center items-center">
+      <div className="p-2 md:p-6 flex flex-col justify-center items-center sm:flex-row sm:items-start">
+        <div className="flex flex-col justify-center items-center sm:items-start sm:ml-0 sm:mr-10">
           <img
             className="w-96 h-96 rounded-3xl p-4"
             src="/Jay.png"
             alt="profile"
           />
-          <p className="w-96 text-left mt-2">
+          <p className="w-96 h-auto text-left mt-2 text-sm">
             I've worked as a backend developer in South Korea for about one and
             a half years. Now, I am in Europe to participate in a boot camp that
             caters to Europeans, Britons, and Americans and is conducted
@@ -28,10 +28,12 @@ function AboutMe() {
             ready to take on new challenges.
           </p>
         </div>
-        <div className="flex flex-col justify-center items-start ml-10 ">
+        <div className="flex flex-col justify-center items-start ml-0 mt-6 sm:mt-0">
           <section>
-            <p className="font-bold text-3xl">DEVELOPMENT</p>
-            <div className="grid grid-cols-3 gap-4 mt-5">
+            <p className="font-bold text-xl  md:text-2xl lg:text-3xl">
+              DEVELOPMENT
+            </p>
+            <div className="grid grid-cols-3 gap-4 mt-5 text-xs md:text-md">
               <span className={span}>JavaScript</span>
               <span className={span}>TypeScript</span>
               <span className={span}>Git</span>
@@ -46,8 +48,8 @@ function AboutMe() {
             </div>
           </section>
           <section className="mt-10">
-            <p className="font-bold text-3xl">ETC.</p>
-            <div className="grid grid-cols-3 gap-4 mt-5">
+            <p className="font-bold text-xl  md:text-2xl lg:text-3xl">ETC.</p>
+            <div className="grid grid-cols-3 gap-3 mt-5 text-xs md:text-md">
               <span className={span__2}>Docker</span>
               <span className={span__2}>PostMan</span>
               <span className={span__2}>TailWind</span>
