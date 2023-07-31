@@ -25,7 +25,7 @@ function ProjectList() {
   ];
 
   return (
-    <section className="flex flex-col justify-center items-center -mt-20">
+    <section className="flex flex-col justify-centers items-center -mt-20">
       <div className="flex flex-col justify-center items-center -mt-10">
         <h1 className="text-4xl mb-10 font-semibold">My Projects</h1>
         <p className="text-md md:text-xl mb-16 text-center">
@@ -36,7 +36,7 @@ function ProjectList() {
         {filterOptions.map((option) => (
           <button
             key={option.type}
-            className={`mr-4 border rounded-lg px-4 py-2 ${
+            className={`mr-2 md:mr-4 border rounded-lg px-4 py-2 ${
               selectedType === option.type ? "bg-brand text-white" : "bg-white"
             }`}
             onClick={() => handleFilterOption(option.type)}
@@ -45,7 +45,7 @@ function ProjectList() {
           </button>
         ))}
       </div>
-      <ul className="w-3/4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 ml-8">
+      <ul className="w-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 ml-8">
         {getFilteredProjects().map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
