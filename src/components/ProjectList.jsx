@@ -45,7 +45,7 @@ function ProjectList() {
           </button>
         ))}
       </div>
-      <ul className="w-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 ml-8">
+      <ul className="w-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
         {getFilteredProjects().map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}

@@ -16,7 +16,7 @@ function AboutMe() {
             src="/Jay.png"
             alt="profile"
           />
-          <p className="w-96 h-auto text-left mt-2 text-sm">
+          <p className="w-96 h-auto text-left mt-2 text-sm p-4">
             I've worked as a backend developer in South Korea for about one and
             a half years. Now, I am in Europe to participate in a boot camp that
             caters to Europeans, Britons, and Americans and is conducted
