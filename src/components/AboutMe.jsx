@@ -9,54 +9,57 @@ function AboutMe() {
   return (
     <section className="flex flex-col justify-center items-center p-2 md:p-6">
       <h2 className="text-5xl font-semibold">About Me</h2>
-      <div className="p-2 md:p-6 flex flex-col justify-center items-center sm:flex-row sm:items-start">
-        <div className="flex flex-col justify-center items-center sm:items-start sm:ml-0 sm:mr-10">
+      <div className="w-full p-2 md:p-6 flex flex-col justify-center items-center xs:flex-col ">
+        <div className="w-3/4 flex flex-col justify-center items-center sm:items-start sm:ml-0 sm:mr-10 md:justify-around xs:flex-row sm:flex-row md:flex-row lg:flex-row ">
           <img
             className="w-96 h-96 rounded-3xl p-4"
             src="/Jay.png"
             alt="profile"
           />
-          <p className="w-96 h-auto text-left mt-2 text-sm p-4">
-            I've worked as a backend developer in South Korea for about one and
-            a half years. Now, I am in Europe to participate in a boot camp that
-            caters to Europeans, Britons, and Americans and is conducted
-            entirely in English. <br /> My goal is to become a frontend
-            developer, and I am currently putting in all my efforts and passion
-            to achieve that. <br />I believe in the synergy between development
-            and design, and I see great potential in bringing both ends
-            together. I am an enthusiastic and adventurous developer, always
-            ready to take on new challenges.
-          </p>
+          <div className="flex flex-col justify-center items-center">
+            <section className="flex flex-col">
+              <p className="font-bold text-xl  md:text-2xl lg:text-3xl">
+                DEVELOPMENT
+              </p>
+              <div className="grid grid-cols-3 gap-4 mt-5 text-xs md:text-md md:grid-cols-2 md:gap-2 md:mt-2">
+                <span className={span}>JavaScript</span>
+                <span className={span}>TypeScript</span>
+                <span className={span}>Git</span>
+                <span className={span}>React</span>
+                <span className={span}>Nest.js</span>
+                <span className={span}>Next.js</span>
+                <span className={span}>AWS</span>
+                <span className={span}>PostgreSQL</span>
+                <span className={span}>HTML</span>
+                <span className={span}>CSS</span>
+                <span className={span}>Express</span>
+              </div>
+            </section>
+            <section className="mt-10 flex flex-col md:mt-3">
+              <p className="font-bold text-xl  md:text-2xl lg:text-3xl">ETC.</p>
+              <div className="grid grid-cols-3 gap-3 mt-5 text-xs md:text-md md:grid-cols-2 md:gap-2 md:mt-2">
+                <span className={span__2}>Docker</span>
+                <span className={span__2}>PostMan</span>
+                <span className={span__2}>TailWind</span>
+                <span className={span__2}>ElasticSearch</span>
+                <span className={span__2}>DynamoDB</span>
+              </div>
+            </section>
+          </div>
         </div>
-        <div className="flex flex-col justify-center items-start ml-0 mt-6 sm:mt-0">
-          <section>
-            <p className="font-bold text-xl  md:text-2xl lg:text-3xl">
-              DEVELOPMENT
-            </p>
-            <div className="grid grid-cols-3 gap-4 mt-5 text-xs md:text-md">
-              <span className={span}>JavaScript</span>
-              <span className={span}>TypeScript</span>
-              <span className={span}>Git</span>
-              <span className={span}>React</span>
-              <span className={span}>Nest.js</span>
-              <span className={span}>Next.js</span>
-              <span className={span}>AWS</span>
-              <span className={span}>PostgreSQL</span>
-              <span className={span}>HTML</span>
-              <span className={span}>CSS</span>
-              <span className={span}>Express</span>
-            </div>
-          </section>
-          <section className="mt-10">
-            <p className="font-bold text-xl  md:text-2xl lg:text-3xl">ETC.</p>
-            <div className="grid grid-cols-3 gap-3 mt-5 text-xs md:text-md">
-              <span className={span__2}>Docker</span>
-              <span className={span__2}>PostMan</span>
-              <span className={span__2}>TailWind</span>
-              <span className={span__2}>ElasticSearch</span>
-              <span className={span__2}>DynamoDB</span>
-            </div>
-          </section>
+        <div className="flex flex-col justify-center items-center ml-0 mt-6 sm:mt-0">
+          <p className="w-3/5 md:w-full h-auto text-left mt-2 text-sm sm:text-lg md:text-2xl p-4">
+            I've worked as a backend developer in South Korea for about one and
+            a half years.
+            <br /> Now, I am in Europe to participate in a boot camp that caters
+            to Europeans, Britons, and Americans and is conducted entirely in
+            English. <br /> My goal is to become a frontend developer, and I am
+            currently putting in all my efforts and passion to achieve that.{" "}
+            <br />I believe in the synergy between development and design, and I
+            see great potential in bringing both ends together. I am an
+            enthusiastic and adventurous developer, always ready to take on new
+            challenges.
+          </p>
         </div>
       </div>
     </section>

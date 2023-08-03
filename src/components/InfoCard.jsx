@@ -1,7 +1,7 @@
 import React from "react";
 
 function InfoCard({ icon, title, description, languages, tools, last }) {
-  const borderClass = last ? "" : "border-b md:border-r";
+  const borderClass = last ? "" : "sm:border-b md:border-r";
 
   return (
     <div
