@@ -1,6 +1,7 @@
 import React from "react";
 import { BsGithub, BsLinkedin, BsFillFilePersonFill } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
+import { BiLogoBlogger } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
 function Footer() {
@@ -20,7 +21,7 @@ function Footer() {
             Interested in wanna know more about me? <br /> We should schedule a
             time for a coffee chat!
           </p>
-          <div className="flex justify-center items-center gap-2 md:gap-4 lg:gap-6">
+          <div className="grid grid-cols-3 sm:flex md:flex lg:flex justify-center items-center gap-2 md:gap-4 lg:gap-5">
             <Link to="https://github.com/jungwonJung">
               <i>
                 <BsGithub className="text-white text-md sm:text-lg md:text-2xl lg:text-4xl hover:scale-125 hover:text-brandGreen" />
@@ -34,6 +35,11 @@ function Footer() {
             <Link to="mailto:wjdwjd1501@gmail.com">
               <i>
                 <AiOutlineMail className="text-white text-md sm:text-lg md:text-2xl lg:text-4xl hover:scale-125 hover:text-brandGreen " />
+              </i>
+            </Link>
+            <Link to="https://jungwonjung.github.io/">
+              <i>
+                <BiLogoBlogger className="text-white text-md sm:text-lg md:text-2xl lg:text-4xl hover:scale-125 hover:text-brandGreen " />
               </i>
             </Link>
             <a

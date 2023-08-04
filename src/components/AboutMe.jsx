@@ -35,7 +35,7 @@ function AboutMe() {
                 <span className={span}>Express</span>
               </div>
             </section>
-            <section className="mt-10 flex flex-col md:mt-3">
+            <section className="mt-10 flex flex-col justify-center items-start md:mt-3 mr-9">
               <p className="font-bold text-xl  md:text-2xl lg:text-3xl">ETC.</p>
               <div className="grid grid-cols-3 gap-3 mt-5 text-xs md:text-md md:grid-cols-2 md:gap-2 md:mt-2">
                 <span className={span__2}>Docker</span>
@@ -47,8 +47,8 @@ function AboutMe() {
             </section>
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center ml-0 mt-6 sm:mt-0">
-          <p className="w-3/5 md:w-full h-auto text-left mt-2 text-sm sm:text-lg md:text-2xl p-4">
+        <div className="flex flex-col justify-center items-center mt-6 sm:mt-0">
+          <p className="w-full p-0 md:p-4 lg:p-4 h-auto text-left mt-2 text-sm sm:text-lg md:text-2xl">
             I've worked as a backend developer in South Korea for about one and
             a half years.
             <br /> Now, I am in Europe to participate in a boot camp that caters
