@@ -1,5 +1,13 @@
 const data = [
   {
+    id:0,
+    title:"SoundDesign-API",
+    deployUrl: "https://sdesign-api-jayganzi.koyeb.app/api/docs/",
+    gitUrl: "https://github.com/jungwonJung/SoundDesign-API?tab=readme-ov-file",
+    image: "/assets/soundDesign.png",
+    type: ["React", "JS", "Node"],
+  },
+  {
     id: 1,
     title: "Shoppy",
     deployUrl: "https://meek-figolla-e9ce50.netlify.app/",

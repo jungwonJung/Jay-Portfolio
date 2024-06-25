@@ -48,19 +48,18 @@ function AboutMe() {
           </div>
         </div>
         <div className="flex flex-col justify-center items-center mt-6 sm:mt-0">
-          <p className="w-full p-0 md:p-4 lg:p-4 h-auto text-left mt-2 text-sm sm:text-lg md:text-2xl">
-            I've worked as a backend developer in South Korea for about one and
-            a half years.
-            <br /> Now, I am in Europe to participate in a boot camp that caters
-            to Europeans, Britons, and Americans and is conducted entirely in
-            English. <br /> My goal is to become a frontend developer, and I am
-            currently putting in all my efforts and passion to achieve that.{" "}
-            <br />I believe in the synergy between development and design, and I
-            see great potential in bringing both ends together. I am an
-            enthusiastic and adventurous developer, always ready to take on new
-            challenges.
-          </p>
-        </div>
+  <p className="w-full p-0 md:p-4 lg:p-4 h-auto text-left mt-2 text-sm sm:text-lg md:text-2xl">
+    I am a passionate developer with over 2 years of experience, currently based in Krakow, Poland. My background includes significant work as a Backend Developer in South Korea, where I improved backend test coverage and integrated multiple databases to enhance query speeds.
+    <br /><br />
+    Currently, I am participating in a European boot camp focused on full-stack development, conducted entirely in English. This experience is sharpening my skills in both front-end and back-end technologies, including React, Next.js, Node.js, and Nest.js.
+    <br /><br />
+    My goal is to excel as a Frontend Developer, utilizing my comprehensive technical skill set, which includes JavaScript, TypeScript, PostgreSQL, MongoDB, HTML, CSS, AWS, and Flutter. I am dedicated to continuous learning and improvement, and I believe in the powerful synergy between development and design.
+    <br /><br />
+    With a Bachelor's degree in Computer Science (Mobile & Cloud) and a proven track record in delivering robust and efficient code, I am ready to take on new challenges and contribute to innovative projects. My proficiency in English (C1) and native fluency in Korean enable me to effectively communicate in diverse settings.
+    <br /><br />
+    I am an enthusiastic and adventurous developer, always ready to embrace new opportunities and drive growth through technology.
+  </p>
+</div>
       </div>
     </section>
   );

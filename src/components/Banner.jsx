@@ -27,14 +27,11 @@ function Banner() {
           Hi, I’m Jay. Nice to meet you.
         </h2>
         <p className="text-white text-base sm:text-md md:text-xl lg:text-2xl font-medium -mt-4 sm:-mt-6 md:-mt-8">
-          I worked as a backend developer for about a year and a half in South
-          Korea. <br /> Recently, I was part of a startup where I created a web
-          notification service. <br /> Now, I'm diving into frontend development
-          and studying it passionately because I find it fascinating. <br /> I
-          have a determined nature that pushes me to solve any challenges that
-          come my way.
-          <br /> My enthusiasm and adventurous spirit drive me forward in my
-          pursuits.
+          I have over a year and a half of experience as a Backend Developer in South Korea. <br />  
+          Recently, I was part of a startup where I developed a web notification service. <br /> 
+          Currently, I am transitioning into frontend development, driven by my passion for this field. <br /> 
+          I am dedicated to overcoming any challenges that come my way, leveraging my strong problem-solving skills. <br /> 
+          My enthusiasm and adventurous spirit continuously propel me forward in my professional pursuits.
         </p>
       </div>
     </section>
