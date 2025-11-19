@@ -1,7 +1,9 @@
-const data = [
+import { Project } from "../types";
+
+const data: Project[] = [
   {
-    id:0,
-    title:"SoundDesign-API",
+    id: 0,
+    title: "SoundDesign-API",
     deployUrl: "https://sdesign-api-jayganzi.koyeb.app/api/docs/",
     gitUrl: "https://github.com/jungwonJung/SoundDesign-API?tab=readme-ov-file",
     image: "/assets/soundDesign.png",
@@ -47,7 +49,6 @@ const data = [
     image: "/assets/catmbti.png",
     type: ["JS", "React"],
   },
-
   {
     id: 6,
     title: "Sweet Berry",
@@ -72,7 +73,6 @@ const data = [
     image: "/assets/pixyfy.png",
     type: ["JS", "HTML"],
   },
-
   {
     id: 9,
     title: "JayTube",
@@ -100,3 +100,4 @@ const data = [
 ];
 
 export default data;
+

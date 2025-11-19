@@ -1,12 +1,14 @@
 import React from "react";
 import AboutMe from "../components/AboutMe";
+import Skills from "../components/Skills";
 
-function About() {
+const About: React.FC = () => {
   return (
-    <div>
+    <>
       <AboutMe />
-    </div>
+      <Skills />
+    </>
   );
-}
+};
 
 export default About;
