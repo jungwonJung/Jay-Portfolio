@@ -1,5 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 
+const commands = [
+  { command: "whoami", output: "jay" },
+  { command: "pwd", output: "~/portfolio" },
+  { command: "git status", output: "On branch main\nYour branch is up to date." },
+  { command: "ls -la", output: "total 24\ndrwxr-xr-x  8 jay  staff   256 Jan 15 10:30 ." },
+  { command: "npm run dev", output: "> portfolio@1.0.0 dev\n> next dev\n\n  ▲ Next.js 14.0.0\n  - Local:        http://localhost:3000" },
+];
+
 const TerminalBackground: React.FC = () => {
   const [lines, setLines] = useState<Array<{ type: 'prompt' | 'command' | 'output', content: string }>>([]);
   const [currentCommand, setCurrentCommand] = useState("");
@@ -7,14 +15,6 @@ const TerminalBackground: React.FC = () => {
   const commandIndexRef = useRef(0);
   const phaseRef = useRef<'prompt' | 'typing' | 'output' | 'wait'>('prompt');
   const charIndexRef = useRef(0);
-
-  const commands = [
-    { command: "whoami", output: "jay" },
-    { command: "pwd", output: "~/portfolio" },
-    { command: "git status", output: "On branch main\nYour branch is up to date." },
-    { command: "ls -la", output: "total 24\ndrwxr-xr-x  8 jay  staff   256 Jan 15 10:30 ." },
-    { command: "npm run dev", output: "> portfolio@1.0.0 dev\n> next dev\n\n  ▲ Next.js 14.0.0\n  - Local:        http://localhost:3000" },
-  ];
 
   useEffect(() => {
     const prompt = "jay@portfolio ~ % ";
@@ -70,7 +70,7 @@ const TerminalBackground: React.FC = () => {
 
     const timer = setTimeout(animate, 500);
     return () => clearTimeout(timer);
-  }, []);
+  }, [commands]);
 
   const renderLine = (line: { type: 'prompt' | 'command' | 'output', content: string }, index: number) => {
     if (line.type === 'prompt') {

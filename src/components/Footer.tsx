@@ -1,7 +1,6 @@
 import React from "react";
-import { BsGithub, BsLinkedin, BsFillFilePersonFill } from "react-icons/bs";
+import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
-import { BiLogoBlogger } from "react-icons/bi";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();

@@ -3,7 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import { useWindowSize } from "../hooks/useWindowSize";
 import { scrollToElement } from "../lib/utils";
-import { cn } from "../lib/utils";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

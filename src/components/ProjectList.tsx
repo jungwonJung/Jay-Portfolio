@@ -3,11 +3,11 @@ import data from "../data/data";
 import ProjectCard from "./ProjectCard";
 import { HiOutlineLink } from "react-icons/hi";
 
+// Featured projects (you can mark important ones)
+const featuredProjects = [0, 1, 2]; // SoundDesign-API, Shoppy, Jay-ddit
+
 const ProjectList: React.FC = () => {
   const [showFeaturedOnly, setShowFeaturedOnly] = useState(false);
-
-  // Featured projects (you can mark important ones)
-  const featuredProjects = [0, 1, 2]; // SoundDesign-API, Shoppy, Jay-ddit
 
   const filteredProjects = useMemo(() => {
     let projects = data;
