@@ -13,17 +13,18 @@ const Skills: React.FC = () => {
       icon: <HiOutlineCode className="w-6 h-6" />,
       title: "Language",
       skills: [
-        { name: "JavaScript", color: "bg-yellow-500" },
-        { name: "TypeScript", color: "bg-blue-600" },
         { name: "Swift", color: "bg-orange-500" },
+        { name: "TypeScript", color: "bg-blue-600" },
+        { name: "JavaScript", color: "bg-yellow-500" },
       ],
     },
     {
       icon: <HiOutlineDesktopComputer className="w-6 h-6" />,
-      title: "Frontend",
+      title: "iOS Development",
       skills: [
-        { name: "React", color: "bg-blue-500" },
-        { name: "Next.js", color: "bg-gray-900" },
+        { name: "SwiftUI", color: "bg-blue-500" },
+        { name: "UIKit", color: "bg-gray-700" },
+        { name: "Core Data", color: "bg-purple-600" },
       ],
     },
     {

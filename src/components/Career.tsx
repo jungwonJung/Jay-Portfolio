@@ -17,12 +17,13 @@ const Career: React.FC = () => {
       period: "Oct 2024 — Present",
       role: "Data Labeler",
       location: "Krakow, Poland",
-      description: "Analyzed and categorized data sets to enhance machine learning algorithms.",
+      description: "Analyzed and categorized data sets to enhance machine learning algorithms. Currently transitioning to iOS development, actively learning Swift and SwiftUI to build native iOS applications.",
       achievements: [
         "Collaborated with team members to improve data accuracy (95%+) and labeling techniques",
         "Implemented quality control measures to ensure high standards in data labeling",
         "Utilized industry-standard tools for efficient data processing and management",
         "Trained new hires on data labeling processes and best practices",
+        "Self-studying iOS development with Swift and SwiftUI to transition into mobile development",
       ],
     },
     {
