@@ -5,6 +5,7 @@ import Skills from "../components/Skills";
 import Contact from "../components/Contact";
 import ProjectList from "../components/ProjectList";
 import Career from "../components/Career";
+import SectionNav from "../components/SectionNav";
 
 const Home: React.FC = () => {
   return (
@@ -15,8 +16,10 @@ const Home: React.FC = () => {
       <Contact />
       <ProjectList />
       <Career />
+      <SectionNav />
     </>
   );
 };
 
 export default Home;
+

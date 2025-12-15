@@ -140,8 +140,9 @@ const Banner: React.FC = () => {
           </p>
           <div className="text-base sm:text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
             <p className="mb-1">Hello,</p>
-            <p className="mb-1">I'm an iOS developer transitioning from backend development.</p>
-            <p>Passionate about building native iOS applications with Swift and SwiftUI.</p>
+            <p className="mb-1">I'm an iOS developer with 3 years of backend development experience, now transitioning to mobile development.</p>
+            <p className="mb-1">Passionate about building native iOS applications</p>
+            <p>with Swift and UIKit with SwiftUI.</p>
           </div>
           <a
             href="#about"

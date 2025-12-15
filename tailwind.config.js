@@ -13,9 +13,6 @@ module.exports = {
         brandNavy: "#141c3a",
         brandMagenta: "#e3cffe",
       },
-      backgroundImage: {
-        main: `url('../public/Main.svg')`,
-      },
     },
   },
   plugins: [],
