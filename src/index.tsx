@@ -4,8 +4,9 @@ import "./index.css";
 import App from "./App";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import NotFound from "./pages/NotFound";
-import Home from "./pages/Home";
-import About from "./pages/About";
+import IOSHome from "./pages/IOSHome";
+import ProjectDetail from "./pages/ProjectDetail";
+import CareerDetail from "./pages/CareerDetail";
 
 const router = createBrowserRouter([
   {
@@ -13,8 +14,9 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <NotFound />,
     children: [
-      { index: true, path: "/", element: <Home /> },
-      { path: "/about", element: <About /> },
+      { index: true, path: "/", element: <IOSHome /> },
+      { path: "/project/:id", element: <ProjectDetail /> },
+      { path: "/career/:id", element: <CareerDetail /> },
     ],
   },
 ]);

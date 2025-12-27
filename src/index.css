@@ -5,18 +5,37 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* iOS-like rubber band scrolling */
+    overscroll-behavior-y: contain;
   }
 
   body {
     margin: 0;
-    font-family: "Montserrat", sans-serif;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    @apply bg-white text-gray-900;
+    background: linear-gradient(135deg, #D1E9FF 0%, #FFFFFF 50%, #E8D5FF 100%);
+    background-attachment: fixed;
+    color: #000000;
+    min-height: 100vh;
+    position: relative;
+    /* Safe area support for mobile devices */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
   }
 
   #root {
-    @apply w-full min-h-screen;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  html {
+    overflow: auto;
+    scroll-behavior: smooth;
   }
 
   code {
@@ -24,55 +43,105 @@
       monospace;
   }
 
-  /* Focus styles for accessibility */
+  /* iOS-like focus styles */
   *:focus-visible {
-    @apply outline-none ring-2 ring-brand ring-offset-2;
+    @apply outline-none;
+  }
+}
+
+@layer components {
+  /* iOS Group Container */
+  .ios-group {
+    @apply bg-iosSecondaryBg-light dark:bg-iosSecondaryBg-dark;
+    @apply rounded-ios overflow-hidden;
+    @apply mb-4;
+  }
+
+  /* iOS Separator */
+  .ios-separator {
+    @apply border-t;
+    border-color: rgba(198, 198, 200, 0.5);
+    border-width: 0.5px;
+    margin-left: 16px;
+  }
+
+  .dark .ios-separator {
+    border-color: rgba(56, 56, 58, 0.5);
+  }
+
+  .ios-separator-full {
+    @apply border-t;
+    border-color: rgba(198, 198, 200, 0.5);
+    border-width: 0.5px;
+  }
+
+  .dark .ios-separator-full {
+    border-color: rgba(56, 56, 58, 0.5);
+  }
+
+  /* iOS Row */
+  .ios-row {
+    @apply flex items-center;
+    @apply px-4;
+    @apply bg-iosSecondaryBg-light dark:bg-iosSecondaryBg-dark;
+    @apply transition-colors;
+    min-height: 44px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    gap: 0;
+  }
+
+  .ios-row:active {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .dark .ios-row:active {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  /* iOS Group Title */
+  .ios-group-title {
+    @apply text-xs font-medium;
+    @apply text-iosTertiaryLabel-light dark:text-iosTertiaryLabel-dark;
+    @apply uppercase tracking-wide;
+    @apply px-4;
+    padding-top: 8px;
+    padding-bottom: 4px;
+  }
+
+  /* iOS Navigation Row */
+  .ios-nav-row {
+    @apply ios-row;
+    @apply cursor-pointer;
+  }
+
+  /* iOS Info Row */
+  .ios-info-row {
+    @apply ios-row;
+  }
+
+  /* iOS Chevron */
+  .ios-chevron {
+    @apply text-iosTertiaryLabel-light dark:text-iosTertiaryLabel-dark;
+    width: 8px;
+    height: 12px;
+    flex-shrink: 0;
   }
 }
 
 @layer utilities {
-  /* Custom scrollbar */
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 8px;
+  /* iOS Rubber Band Scroll */
+  .ios-scroll {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
   }
 
-  .custom-scrollbar::-webkit-scrollbar-track {
-    @apply bg-gray-100;
+  /* iOS Safe Area */
+  .ios-safe-top {
+    padding-top: env(safe-area-inset-top);
   }
 
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    @apply bg-brand rounded-full;
-  }
-
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    @apply bg-brand/80;
-  }
-
-  .animate-in {
-    animation: fadeIn 0.3s ease-in-out;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .delay-1000 {
-    animation-delay: 1s;
-  }
-
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
+  .ios-safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
   }
 }
