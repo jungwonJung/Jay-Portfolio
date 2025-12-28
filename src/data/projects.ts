@@ -5,6 +5,7 @@ export interface Project {
   imageAlt: string;
   shortDescription: string;
   description: string;
+  descriptionBullets?: string[]; // Optional bullet points for description
   highlights: string[];
   links: Array<{ label: string; url: string }>;
   technologies: string[];
@@ -21,6 +22,13 @@ export const projects: Project[] = [
     imageAlt: 'Screens of PARKinPL iOS parking zone app',
     shortDescription: 'Native iOS app that helps drivers instantly find parking zones and rates in major Polish cities.',
     description: 'PARKinPL is a native UIKit-based iOS app that helps users find the correct parking zone and rates in major Polish cities. It uses GPS and MapKit for real-time zone detection, shows accurate parking prices and operating hours, and supports six cities including Warsaw, Kraków, Wrocław, Katowice, Łódź, and Pszczyna. All location processing happens locally on-device with no backend or network calls, so the app works fully offline once installed.',
+    descriptionBullets: [
+      'Native iOS app built entirely with UIKit.',
+      'Real-time parking zone detection in major Polish cities.',
+      'Fully offline functionality with 100% on-device processing.',
+      'Privacy-first design: No ads, no accounts, no tracking.',
+      'Available on the App Store for a seamless user experience.',
+    ],
     highlights: [
       'Real-time parking zone detection using GPS and MapKit.',
       'Accurate pricing and operating hours for 6 major Polish cities.',

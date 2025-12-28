@@ -2,11 +2,117 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { HiOutlineExternalLink } from 'react-icons/hi';
+import { 
+  Smartphone, 
+  MapPin, 
+  CloudOff, 
+  Map, 
+  Code, 
+  Server, 
+  ShoppingCart,
+  MessageCircle,
+  Cpu,
+  Navigation,
+  CheckCircle
+} from 'lucide-react';
 import IOSNavbar from '../components/IOSNavbar';
 import IOSGroup from '../components/IOSGroup';
 import IOSRow from '../components/IOSRow';
 import IPhoneMockup from '../components/IPhoneMockup';
 import { projects } from '../data/projects';
+
+// Helper function to format text with bold keywords
+const formatDescriptionText = (text: string): React.ReactNode => {
+  // Order matters: longer phrases first to avoid partial matches
+  const keywords = [
+    'App Store', 'Privacy-first', 'on-device', 'MapKit', 'CoreLocation',
+    'SwiftUI', 'TypeScript', 'NestJS', 'UIKit',
+    'Swift', 'React', 'iOS', 'UI/UX', 'GPS', 'MVVM', 'offline'
+  ];
+  
+  // Create a regex pattern that matches any of the keywords (case insensitive)
+  const escapedKeywords = keywords.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  const pattern = new RegExp(`(${escapedKeywords.join('|')})`, 'gi');
+  
+  // Split text by keywords and map to React elements
+  const parts = text.split(pattern);
+  
+  return (
+    <>
+      {parts.map((part, index) => {
+        // Check if this part is a keyword (case-insensitive check)
+        const isKeyword = keywords.some(keyword => 
+          part.toLowerCase() === keyword.toLowerCase()
+        );
+        
+        if (isKeyword) {
+          return <strong key={index} className="font-semibold">{part}</strong>;
+        }
+        return <span key={index}>{part}</span>;
+      })}
+    </>
+  );
+};
+
+// Helper function to get icon for project highlights
+const getProjectHighlightIcon = (highlight: string, projectId: string): React.ReactNode => {
+  const iconClass = "w-5 h-5 text-blue-500";
+  
+  // PARKinPL specific icons
+  if (projectId === 'parkinpl') {
+    const lowerHighlight = highlight.toLowerCase();
+    // Check in order of specificity
+    if (lowerHighlight.includes('zone detection') || lowerHighlight.includes('gps') || lowerHighlight.includes('mapkit') || lowerHighlight.includes('real-time')) {
+      return <MapPin className={iconClass} />;
+    }
+    if (lowerHighlight.includes('offline') || (lowerHighlight.includes('on-device') && lowerHighlight.includes('processing')) || lowerHighlight.includes('100%')) {
+      return <CloudOff className={iconClass} />;
+    }
+    if (lowerHighlight.includes('cities') || lowerHighlight.includes('warsaw') || lowerHighlight.includes('kraków') || lowerHighlight.includes('pricing') || lowerHighlight.includes('operating hours')) {
+      return <Map className={iconClass} />;
+    }
+    if (lowerHighlight.includes('native') || lowerHighlight.includes('uikit') || lowerHighlight.includes('built with')) {
+      return <Smartphone className={iconClass} />;
+    }
+    if (lowerHighlight.includes('app store') || lowerHighlight.includes('released') || lowerHighlight.includes('no ads')) {
+      return <CheckCircle className={iconClass} />;
+    }
+  }
+  
+  // Generic icons for other projects
+  if (highlight.toLowerCase().includes('api') || highlight.toLowerCase().includes('backend')) {
+    return <Server className={iconClass} />;
+  }
+  if (highlight.toLowerCase().includes('cart') || highlight.toLowerCase().includes('shopping')) {
+    return <ShoppingCart className={iconClass} />;
+  }
+  if (highlight.toLowerCase().includes('real-time') || highlight.toLowerCase().includes('update')) {
+    return <MessageCircle className={iconClass} />;
+  }
+  if (highlight.toLowerCase().includes('architecture') || highlight.toLowerCase().includes('scalable')) {
+    return <Code className={iconClass} />;
+  }
+  
+  // Default icon
+  return <Cpu className={iconClass} />;
+};
+
+// Helper function to get icon for technologies
+const getTechnologyIcon = (tech: string): React.ReactNode => {
+  const iconClass = "w-5 h-5 text-indigo-500";
+  
+  if (tech.toLowerCase().includes('swift') || tech.toLowerCase().includes('ios')) {
+    return <Smartphone className={iconClass} />;
+  }
+  if (tech.toLowerCase().includes('api') || tech.toLowerCase().includes('backend') || tech.toLowerCase().includes('nestjs')) {
+    return <Server className={iconClass} />;
+  }
+  if (tech.toLowerCase().includes('react') || tech.toLowerCase().includes('frontend')) {
+    return <Code className={iconClass} />;
+  }
+  
+  return <Cpu className={iconClass} />;
+};
 
 const ProjectDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -152,10 +258,9 @@ const ProjectDetail: React.FC = () => {
                 {project.githubUrl && (
                   <button
                     onClick={() => window.open(project.githubUrl, '_blank')}
-                    className="px-4 py-2.5 rounded-full text-blue-500 text-[15px] font-medium active:bg-blue-50 transition-colors"
+                    className="px-4 py-2.5 rounded-full text-blue-500 border border-blue-500 text-[15px] font-medium active:bg-blue-50 transition-colors"
                     style={{ 
-                      backgroundColor: 'transparent',
-                      border: 'none'
+                      backgroundColor: 'transparent'
                     }}
                   >
                     View on GitHub
@@ -168,9 +273,28 @@ const ProjectDetail: React.FC = () => {
           {/* Description Section */}
           <IOSGroup title="DESCRIPTION" className="mb-2">
             <div className="px-4 py-3">
-              <p className="text-[17px] text-iosLabel-light leading-relaxed">
-                {project.description}
-              </p>
+              {project.descriptionBullets ? (
+                <ul className="list-none space-y-2.5" style={{ paddingLeft: '0' }}>
+                  {project.descriptionBullets.map((bullet, index) => (
+                    <li 
+                      key={index} 
+                      className="text-iosLabel-light flex items-start"
+                      style={{ paddingLeft: '0', lineHeight: '1.6', fontSize: '0.9rem' }}
+                    >
+                      <span className="text-iosSecondaryLabel-light mr-3 flex-shrink-0" style={{ marginTop: '4px', fontSize: '20px' }}>
+                        •
+                      </span>
+                      <span className="flex-1">
+                        {formatDescriptionText(bullet)}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-[17px] text-iosLabel-light leading-relaxed">
+                  {project.description}
+                </p>
+              )}
             </div>
           </IOSGroup>
 
@@ -179,7 +303,11 @@ const ProjectDetail: React.FC = () => {
             <IOSGroup title="KEY FEATURES" className="mb-2">
               {project.highlights.map((highlight, index) => (
                 <React.Fragment key={index}>
-                  <IOSRow label={highlight} />
+                  <IOSRow 
+                    leftIcon={getProjectHighlightIcon(highlight, project.id)}
+                    label={formatDescriptionText(highlight)}
+                    fontSize="0.9rem"
+                  />
                   {index < project.highlights.length - 1 && <div className="ios-separator" />}
                 </React.Fragment>
               ))}
@@ -191,7 +319,10 @@ const ProjectDetail: React.FC = () => {
             <IOSGroup title="TECHNOLOGIES" className="mb-2">
               {project.technologies.map((tech, index) => (
                 <React.Fragment key={index}>
-                  <IOSRow label={tech} />
+                  <IOSRow 
+                    leftIcon={getTechnologyIcon(tech)}
+                    label={tech} 
+                  />
                   {index < project.technologies.length - 1 && <div className="ios-separator" />}
                 </React.Fragment>
               ))}

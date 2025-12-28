@@ -102,7 +102,7 @@ const IOSHome: React.FC = () => {
             <IOSRow
               leftIcon={<BsLinkedin className="w-5 h-5 text-iosLabel-light" />}
               label="LinkedIn"
-              onClick={() => window.open('https://www.linkedin.com/in/jungwon-jung/', '_blank')}
+              onClick={() => window.open('https://www.linkedin.com/in/jungwon-jung-218750232/', '_blank')}
               showChevron
             />
             <div className="ios-separator" />

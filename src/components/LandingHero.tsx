@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import { HiChevronDown } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 
@@ -7,9 +7,86 @@ interface LandingHeroProps {
 }
 
 const LandingHero: React.FC<LandingHeroProps> = ({ onScrollDown }) => {
-  const handleScrollDown = () => {
-    onScrollDown();
-  };
+  const hasTriggeredRef = useRef(false);
+  const touchStartYRef = useRef<number | null>(null);
+  const debounceTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleScrollDown = useCallback(() => {
+    // Prevent multiple triggers
+    if (hasTriggeredRef.current) return;
+    
+    // Clear any existing debounce timeout
+    if (debounceTimeoutRef.current) {
+      clearTimeout(debounceTimeoutRef.current);
+    }
+
+    // Debounce the trigger slightly to prevent accidental activation
+    debounceTimeoutRef.current = setTimeout(() => {
+      hasTriggeredRef.current = true;
+      onScrollDown();
+    }, 100);
+  }, [onScrollDown]);
+
+  // Handle wheel/scroll events (desktop)
+  useEffect(() => {
+    const handleWheel = (e: WheelEvent) => {
+      // Only trigger on scroll down (deltaY > 0)
+      // Require a minimum scroll distance to avoid accidental triggers
+      if (e.deltaY > 10) {
+        e.preventDefault();
+        handleScrollDown();
+      }
+    };
+
+    // Add event listener with passive: false to allow preventDefault
+    window.addEventListener('wheel', handleWheel, { passive: false });
+
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+      if (debounceTimeoutRef.current) {
+        clearTimeout(debounceTimeoutRef.current);
+      }
+    };
+  }, [handleScrollDown]);
+
+  // Handle touch/swipe events (mobile/tablet)
+  useEffect(() => {
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartYRef.current = e.touches[0].clientY;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (touchStartYRef.current === null) return;
+
+      const touchCurrentY = e.touches[0].clientY;
+      const deltaY = touchStartYRef.current - touchCurrentY;
+
+      // Swipe up detected (user swiped upward, which is scroll down)
+      // Require minimum swipe distance of 50px to avoid accidental triggers
+      if (deltaY > 50) {
+        e.preventDefault();
+        handleScrollDown();
+        touchStartYRef.current = null;
+      }
+    };
+
+    const handleTouchEnd = () => {
+      touchStartYRef.current = null;
+    };
+
+    window.addEventListener('touchstart', handleTouchStart, { passive: true });
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+    window.addEventListener('touchend', handleTouchEnd, { passive: true });
+
+    return () => {
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchend', handleTouchEnd);
+      if (debounceTimeoutRef.current) {
+        clearTimeout(debounceTimeoutRef.current);
+      }
+    };
+  }, [handleScrollDown]);
 
   return (
     <motion.div

@@ -2,12 +2,13 @@ import React from 'react';
 
 interface IOSRowProps {
   leftIcon?: React.ReactNode;
-  label: string;
+  label: string | React.ReactNode;
   value?: string;
   rightElement?: React.ReactNode;
   onClick?: () => void;
   showChevron?: boolean;
   className?: string;
+  fontSize?: string; // Optional font size override
 }
 
 const IOSRow: React.FC<IOSRowProps> = ({
@@ -18,6 +19,7 @@ const IOSRow: React.FC<IOSRowProps> = ({
   onClick,
   showChevron = false,
   className = '',
+  fontSize = '17px',
 }) => {
   const isClickable = onClick !== undefined;
 
@@ -25,13 +27,13 @@ const IOSRow: React.FC<IOSRowProps> = ({
     <>
       {/* Left Icon */}
       {leftIcon && (
-        <div className="w-[30px] h-[30px] rounded-lg bg-iosGroupedBg-light flex items-center justify-center mr-3 flex-shrink-0">
+        <div className="flex items-center justify-center flex-shrink-0 self-start" style={{ width: '20px', height: '20px', marginTop: '2px' }}>
           {leftIcon}
         </div>
       )}
 
       {/* Label */}
-      <span className="text-[17px] text-iosLabel-light flex-1 text-left min-w-0">
+      <span className="text-iosLabel-light flex-1 text-left min-w-0" style={{ fontSize }}>
         {label}
       </span>
 
@@ -45,7 +47,7 @@ const IOSRow: React.FC<IOSRowProps> = ({
 
       {/* Chevron */}
       {showChevron && (
-        <div className="ml-2 flex-shrink-0">
+        <div className="flex items-center justify-center flex-shrink-0" style={{ marginLeft: '4px' }}>
           <svg
             className="ios-chevron"
             viewBox="0 0 8 12"

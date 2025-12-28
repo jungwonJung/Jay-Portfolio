@@ -88,7 +88,7 @@
     min-height: 44px;
     padding-top: 12px;
     padding-bottom: 12px;
-    gap: 0;
+    gap: 12px;
   }
 
   .ios-row:active {
