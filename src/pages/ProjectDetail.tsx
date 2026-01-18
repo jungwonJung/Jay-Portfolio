@@ -12,7 +12,6 @@ import {
   ShoppingCart,
   MessageCircle,
   Cpu,
-  Navigation,
   CheckCircle
 } from 'lucide-react';
 import IOSNavbar from '../components/IOSNavbar';
