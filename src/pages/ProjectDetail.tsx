@@ -26,8 +26,9 @@ const formatDescriptionText = (text: string): React.ReactNode => {
   // Order matters: longer phrases first to avoid partial matches
   const keywords = [
     'App Store', 'Privacy-first', 'on-device', 'MapKit', 'CoreLocation',
-    'SwiftUI', 'TypeScript', 'NestJS', 'UIKit',
-    'Swift', 'React', 'iOS', 'UI/UX', 'GPS', 'MVVM', 'offline'
+    'SwiftUI', 'TypeScript', 'NestJS', 'UIKit', 'Combine', 'Firebase', 'Haptics',
+    'Swift', 'React', 'iOS', 'UI/UX', 'GPS', 'MVVM', 'offline',
+    '60-second', 'timer', 'algorithms', 'data structures', 'computer science'
   ];
   
   // Create a regex pattern that matches any of the keywords (case insensitive)
