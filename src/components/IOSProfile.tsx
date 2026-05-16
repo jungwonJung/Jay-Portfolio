@@ -4,11 +4,20 @@ const IOSProfile: React.FC = () => {
   return (
     <div className="flex flex-col items-center py-4 px-4">
       {/* Avatar */}
-      <div className="w-16 h-16 rounded-full bg-iosSecondaryBg-light mb-2 overflow-hidden">
+      <div
+        style={{
+          width: '64px',
+          height: '64px',
+          borderRadius: '50%',
+          overflow: 'hidden',
+          marginBottom: '8px',
+          flexShrink: 0,
+        }}
+      >
         <img
           src="/Jay.png"
           alt="JungWon JUNG"
-          className="w-full h-full object-cover"
+          style={{ width: '64px', height: '64px', objectFit: 'cover', display: 'block' }}
         />
       </div>
 
@@ -18,8 +27,13 @@ const IOSProfile: React.FC = () => {
       </h1>
 
       {/* Subtitle */}
-      <p className="text-[16px] text-iosSecondaryLabel-light">
-        iOS Developer
+      <p className="text-[15px] text-iosSecondaryLabel-light mb-1">
+        iOS Developer · Backend Engineer
+      </p>
+
+      {/* App Store badge */}
+      <p className="text-[12px] text-blue-500 font-medium tracking-wide">
+        3 Apps on the App Store
       </p>
     </div>
   );

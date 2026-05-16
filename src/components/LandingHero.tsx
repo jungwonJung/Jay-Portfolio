@@ -105,61 +105,74 @@ const LandingHero: React.FC<LandingHeroProps> = ({ onScrollDown }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2, ease: 'easeOut' }}
-        className="text-center px-4 w-full max-w-4xl"
         style={{
+          textAlign: 'center',
+          padding: '0 24px',
+          width: '100%',
+          maxWidth: '672px',
           paddingTop: 'env(safe-area-inset-top)',
-          paddingBottom: 'env(safe-area-inset-bottom)'
+          paddingBottom: 'env(safe-area-inset-bottom)',
         }}
       >
-        {/* Welcome Text with Apple-style Animation */}
-        <motion.h1 
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-gray-900 mb-4"
-          initial={{ opacity: 0, y: 50, scale: 0.9 }}
+        {/* Name label */}
+        <motion.p
+          style={{ fontSize: '12px', fontWeight: 500, letterSpacing: '0.15em', color: '#9ca3af', textTransform: 'uppercase', marginBottom: '12px' }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+        >
+          JungWon JUNG
+        </motion.p>
+
+        {/* Main headline */}
+        <motion.h1
+          className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter text-gray-900"
+          style={{ marginBottom: '12px', lineHeight: '1.1' }}
+          initial={{ opacity: 0, y: 40, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ 
-            duration: 1,
-            ease: [0.16, 1, 0.3, 1], // Apple's custom easing curve
-            delay: 0.2
-          }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.35 }}
         >
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ 
-              duration: 0.8,
-              ease: [0.16, 1, 0.3, 1],
-              delay: 0.4
-            }}
-          >
-            Welcome
-          </motion.span>
+          iOS Developer.
         </motion.h1>
-        
-        <motion.h2 
-          className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-700 mb-2"
+
+        {/* Subheadline */}
+        <motion.p
+          className="text-xl sm:text-2xl font-medium"
+          style={{ color: '#6b7280', marginBottom: '36px' }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ 
-            duration: 0.8,
-            ease: [0.16, 1, 0.3, 1],
-            delay: 0.6
-          }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.55 }}
         >
-          iOS Developer
-        </motion.h2>
-        
-        <motion.h3 
-          className="text-lg sm:text-xl md:text-2xl font-medium text-gray-600"
-          initial={{ opacity: 0, y: 30 }}
+          Backend roots.{' '}
+          <span style={{ color: '#374151' }}>Mobile focus.</span>
+        </motion.p>
+
+        {/* Stats row — inline styles to guarantee layout */}
+        <motion.div
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '32px' }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ 
-            duration: 0.8,
-            ease: [0.16, 1, 0.3, 1],
-            delay: 0.8
-          }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.75 }}
         >
-          Jay's Portfolio
-        </motion.h3>
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ fontSize: '32px', fontWeight: 700, color: '#111827', lineHeight: 1 }}>3</p>
+            <p style={{ fontSize: '11px', color: '#9ca3af', marginTop: '4px', lineHeight: '1.4' }}>Apps on{'\n'}App Store</p>
+          </div>
+
+          <div style={{ width: '1px', height: '40px', backgroundColor: '#e5e7eb' }} />
+
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ fontSize: '32px', fontWeight: 700, color: '#111827', lineHeight: 1 }}>2+</p>
+            <p style={{ fontSize: '11px', color: '#9ca3af', marginTop: '4px', lineHeight: '1.4' }}>Years Backend{'\n'}Experience</p>
+          </div>
+
+          <div style={{ width: '1px', height: '40px', backgroundColor: '#e5e7eb' }} />
+
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ fontSize: '28px', lineHeight: 1 }}>🇵🇱</p>
+            <p style={{ fontSize: '11px', color: '#9ca3af', marginTop: '4px', lineHeight: '1.4' }}>Based in{'\n'}Katowice</p>
+          </div>
+        </motion.div>
       </motion.div>
 
       {/* Bouncing Arrow - Responsive positioning */}
